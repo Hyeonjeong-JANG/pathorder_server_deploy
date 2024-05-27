@@ -1,72 +1,133 @@
-# 커피 중개 어플 서버
+# pathorder_app
+kdit4-green Final Project Team 3
 
-## 프로젝트 기간
+# Pathorder App Project
+
+# 📖 앱소개
+> 커피 구매 앱으로 자신과 가까운 거리에 있는 카페들을 조회하고 구매, 결제까지 할 수 있는 커피 구매 앱
+# 📽️ 시연영상
+
+[App 시연영상](https://www.youtube.com/watch?v=P4SWClE4wd8)
+
+[Web 시연영상](https://www.youtube.com/watch?v=1SRf4YaUzlU)
+
+# 📚 발표자료
+[PPT](https://github.com/cowcat0722/pathorder_copy_app/files/15451115/KDT.3.3.pdf)
+
+# ⏰ 프로젝트 기간
 2024.04.17 ~ 2024.05.22
-## 팀원 소개
-#### 팀장
-- 조정현 [(@9oj0e)](https://github.com/9oj0e)
-#### Front-End-
-- 박찬혁 [(@cowcat0722)](https://github.com/cowcat0722)
-- 최윤정 [(@yunchocopie)](https://github.com/yunchocopie)
-#### Back-End
-- 장현정 [(@Hyeonjeong-JANG)](https://github.com/Hyeonjeong-JANG)
-- 김성재 [(@kimsjae)](https://github.com/kimsjae)
+# 👨‍👩‍👧‍👧 팀원 소개
+### Team-Leader
 
-## PPT
-[KDT 3차 파이널프로젝트 3조.pdf](https://github.com/9oj0e/pathorder_server/files/15397619/KDT.3.3._.pdf)
+|                                                        조정현                                                        |
+|:---------------------------------------------------------------------------------------------------------------------:|
+| <img src="https://avatars.githubusercontent.com/u/126438339?v=4" alt="profile" width="100" height="100"> | 
+|                                    [(@9oj0e)](https://github.com/9oj0e)                                 |
+
+### Front-End
+
+|                                                   박찬혁                                                    |                                                   최윤정                                                    |
+|:--------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------:| 
+| <img src="https://avatars.githubusercontent.com/u/153582126?s=400&u=72dd9bfa0d3f017d2c237e4f8a58439e58d21930&v=4" alt="profile" width="100" height="100"> | <img src="https://avatars.githubusercontent.com/u/129649095?v=4" alt="profile" width="100" height="100"> | 
+|                                    [(@cowcat0722)](https://github.com/cowcat0722)                                    |                              [(@yunchocopie)](https://github.com/yunchocopie)                              |
+
+### Back-End
+
+|                                                   장현정                                                   |                                                   김성재                                                    |
+|:-------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------:| 
+| <img src="https://avatars.githubusercontent.com/u/139729358?v=4" alt="profile" width="100" height="100"> | <img src="https://avatars.githubusercontent.com/u/153582301?v=4" alt="profile" width="100" height="100"> | 
+|                              [(@Hyeonjeon...)](https://github.com/Hyeonjeong-JANG)                              |                               [(@kimsjae)](https://github.com/kimsjae)                               |
 
 
-## 진행 과정
-##### 1단계: 테이블 설계 ![image](https://github.com/9oj0e/pathorder_server/assets/153582301/eb2ea70d-66fe-44b7-8228-a8edf64fde18)
+# ⚙️ 기술 스택
+## IDE
+<img src="https://img.shields.io/badge/IntelliJ IDEA-000000?style=for-the-badge&logo=intellijidea&logoColor=white"> <img src="https://img.shields.io/badge/Android Studio-34A853?style=for-the-badge&logo=android&logoColor=white">
+## FrameWork
+<img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white">
+## DB
+<img src="https://img.shields.io/badge/h2-000000?style=for-the-badge&logoColor=white"> <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+## 사용기술
+### Front-End
+<img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"> <img src="https://img.shields.io/badge/RiverPod-02569B?style=for-the-badge&logo=flutter&logoColor=white">
 
-![image](https://github.com/9oj0e/pathorder_server/assets/153582301/2c0df725-0c5a-4ff1-a484-7fe1888b32b6)
+### Back-End
+<img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white">
 
-
-
-
-## 개발 환경
-<span>
- <h3><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Eyes.png" width=30" /> IDE</h3>
- <img src="https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white"/>
-<img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white"/>
-  <h3><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Eyes.png" width=30" /> FrameWork</h3>
- <img src="https://img.shields.io/badge/Springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/>
- <img src="https://img.shields.io/badge/BootStrap-8A2BE2?style=for-the-badge&logo=BootStrap&logoColor=white"/>
-  <h3><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Eyes.png" width=30" /> DB</h3>
-   <img src="https://img.shields.io/badge/H2-FFA500?style=for-the-badge&logo=H2&logoColor=white"/>
-   <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"/>
-  <h3><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Eyes.png" width=30" /> 사용기술</h3>
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
-<img src="https://img.shields.io/badge/mustache-F7DF1E?style=for-the-badge&logo=Mustache&logoColor=white"/>
-  <h3><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Eyes.png" width=30" /> 언어</h3>
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"/>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"/>
- </span>
- <br>
-  <br>
-  <span>
- <h3>:컴퓨터:협업 툴</h3>
+## 협업 툴
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/Notioin-000000?style=for-the-badge&logo=notion&logoColor=white"> <img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white">
-</span>
-<br>
-
-## 협업 전략
-#### GitHub
-- Branch : 이름 이니셜/도메인
-- commit
+## ERD
+![66nRBpTgKcAaMdHiq](https://github.com/9oj0e/pathorder_app/assets/129649095/617089f0-a2b4-44a3-ae25-228c0ab848b7)
+# 🛠️ 전략
+- 플러터에서 통신을 하면서 앱이 느려지는 경우가 발생을 해서 최대한 통신을 줄이기 위한 전략 적용.
+- 검색 기능 
   
-   ![image](https://github.com/9oj0e/pathorder_server/assets/153582301/fba64a80-51bc-47ff-942a-6bf45b65ee33)
-- comment : 문제를 겪은 부분 정리
-- issue : 버그나 해결사항 올리기
-#### naming conventions [코드 컨밴션]
-- 패키지 : lowerCase, domain별 패키지 만들기
-- 파일 : camelCase
-- 클래스/메서드/필드값 : pascalCase
-#### 회의
-- 매일 회의록 작성
-  - 진행 상황 보고
-  - 문제점 발견 및 피드백
-  - 건의사항
-- 해결 과제
-  - 할 일 목록 작성
+  플러터에서 주문 하기 페이지로 이동 시 모든 메뉴를 불러오는 통신을 하기 때문에 따로 검색 통신을 한번 더 하는 것은 비효율 적이라고 생각하여 통신한 데이터들을 필터링하는 방식 사용.
+  
+  <img src="https://github.com/cowcat0722/pathorder_copy_app/assets/153582126/68461fa3-bd0c-464c-b172-6aec01ee4fb8"  width="256" height="256"/>
+
+-  장바구니 관리
+ 
+    장바구니에 음료를 담을 때 통신을 하지 않고 플러터 쪽에서 주문하기에 필요한 주문 데이터를 저장하는 'SessionCart' 클래스를 생성하여 장바구니 관리함.
+ 
+-  지도 카메라 위치 변경 이벤트
+
+    지도 카메라 위치 변경 이벤트는 초당 수십번의 통신 요청을 함 -> 이것을 효율적으로 처리하기 위해 Timer를 이용해서 간단하게 디바운싱코드를 구현하여 적용.
+
+    <table style="border: 2px;">
+<tr>
+  <td align=center>디바운싱 적용 전</td>
+  <td align=center>디바운싱 적용 후</td>
+</tr>
+<tr>
+  <td><img src="https://github.com/cowcat0722/pathorder_copy_app/assets/153582126/6122343d-5407-4ca3-a3ca-c9ffc47d41a2"  width="256" height="455"/></td>
+  <td><img src="https://github.com/cowcat0722/pathorder_copy_app/assets/153582126/18715e94-038f-45c5-92a8-4bb21b32b8a5"  width="256" height="455"/></td>
+</tr>
+</table>
+
+
+=> <b>이러한 전략들을 구현함으로써 우리는 애플리케이션이 불필요한 네트워크 통신을 줄이고 그로인한 사용자 경험을 향상시킬 수 있도록 노력하였음.</b>
+
+# 시나리오
+## App
+<table style="border: 2px;">
+<tr>
+  <td align=center>스플래시 화면</td>
+  <td align=center>회원가입</td>
+</tr>
+<tr>
+  <td><img src="https://github.com/cowcat0722/pathorder_copy_app/assets/153582126/e592b843-5034-4612-ad4c-d32a19c38650"  width="256" height="455"/></td>
+  <td><img src="https://github.com/cowcat0722/pathorder_copy_app/assets/153582126/dcf095f9-e99e-4160-8b5b-f98dc34a8480"  width="256" height="455"/></td>
+</tr>
+<tr>
+  <td align=center>로그인</td>
+  <td align=center>리뷰보기</td>
+</tr>
+<tr>
+  <td><img src="https://github.com/cowcat0722/pathorder_copy_app/assets/153582126/32bfa2d7-2a80-4ddf-98c3-93b626e737dc"  width="256" height="455"/></td>
+  <td><img src="https://github.com/cowcat0722/pathorder_copy_app/assets/153582126/1918878d-7043-4831-a4b5-6fb20aeaa53f"  width="256" height="455"/></td>
+</tr>
+<tr>
+  <td align=center>리뷰 쓰기</td>
+  <td align=center>스크랩</td>
+</tr>
+<tr>
+  <td><img src="https://github.com/cowcat0722/pathorder_copy_app/assets/153582126/2b83d878-0846-41c6-9f2f-7b9429e08d46"  width="256" height="455"/></td>
+  <td><img src="https://github.com/cowcat0722/pathorder_copy_app/assets/153582126/007ca2ea-773e-4f04-ad21-bf9944be7a8b"  width="256" height="455"/></td>
+</tr>
+</table>
+
+## Web
+<table style="border: 2px;">
+<tr>
+  <td align=center>주문 상태 변경 및 주문 기록 보기</td>
+</tr>
+<tr>
+  <td><img src="https://github.com/cowcat0722/pathorder_copy_app/assets/153582126/03428258-7273-4509-a4a4-528a766d73e6"  width="910" height="455"/></td>
+</tr>
+  <tr>
+  <td align=center>메뉴 저장 및 수정하기</td>
+</tr>
+<tr>
+  <td><img src="https://github.com/cowcat0722/pathorder_copy_app/assets/153582126/ad9b29e9-67a7-4026-9248-50274584dbad"  width="910" height="455"/></td>
+</tr>
+</table>
