@@ -19,7 +19,7 @@ public class ReviewController {
     // 리뷰 등록
     @AppRequest
     @PostMapping("/api/stores/{storeId}/reviews")
-    public ResponseEntity<?> addReview(@PathVariable int storeId, @Valid @RequestBody ReviewRequest.AddDTO reqDTO, Errors errors) {
+    public ResponseEntity<?> addReview(@PathVariable("storeId") int storeId, @Valid @RequestBody ReviewRequest.AddDTO reqDTO, Errors errors) {
         SessionUser sessionUser = (SessionUser) session.getAttribute("sessionUser");
         ReviewResponse.AddDTO respDTO = reviewService.addReview(reqDTO, storeId, sessionUser.getId());
 
@@ -30,7 +30,7 @@ public class ReviewController {
 
     // 내 리뷰 보기
     @GetMapping("/api/users/{userId}/reviews")
-    public ResponseEntity<?> myReviewList(@PathVariable int userId) {
+    public ResponseEntity<?> myReviewList(@PathVariable("userId") int userId) {
         ReviewResponse.MyReviewListDTO respDTO = reviewService.myReviewList(userId);
 
         return ResponseEntity.ok(new ApiUtil<>(respDTO));
@@ -38,7 +38,7 @@ public class ReviewController {
 
     // 매장 리뷰 보기
     @GetMapping("/api/stores/{storeId}/reviews")
-    public ResponseEntity<?> storeReviewList(@PathVariable int storeId) {
+    public ResponseEntity<?> storeReviewList(@PathVariable("storeId") int storeId) {
         ReviewResponse.StoreReviewListDTO respDTO = reviewService.storeReviewList(storeId);
 
         return ResponseEntity.ok(new ApiUtil<>(respDTO));

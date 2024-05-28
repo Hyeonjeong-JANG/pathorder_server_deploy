@@ -74,7 +74,7 @@ public class StoreOwnerController {
 
     @ResponseBody
     @GetMapping("/stores/{storeId}/pending-order-count")
-    public ResponseEntity<?> getPendingOrderCount(@PathVariable int storeId) {
+    public ResponseEntity<?> getPendingOrderCount(@PathVariable("storeId") int storeId) {
         SessionStore sessionStore = (SessionStore) session.getAttribute("sessionStore");
         if (storeId != sessionStore.getId()) {
             throw new Web403("권한이 없습니다.");
@@ -84,7 +84,7 @@ public class StoreOwnerController {
     }
 
     @GetMapping("/stores/{storeId}/orders") // 매장 관리자 - 처리중인 주문
-    public String orders(@PathVariable int storeId, Model model) {
+    public String orders(@PathVariable("storeId") int storeId, Model model) {
         SessionStore sessionStore = (SessionStore) session.getAttribute("sessionStore");
         if (storeId != sessionStore.getId()) {
             throw new Web403("권한이 없습니다.");
@@ -96,7 +96,7 @@ public class StoreOwnerController {
 
     @WebRequest
     @PostMapping("/stores/{storeId}/orders/{orderId}/update") // 매장 관리자 - 주문 상태 업데이트(주문 접수하기 -> 조리완료)
-    public String updateOrder(@PathVariable int storeId, @PathVariable int orderId, @Valid StoreRequest.UpdateOrderDTO reqDTO, Errors errors) {
+    public String updateOrder(@PathVariable("storeId") int storeId, @PathVariable("orderId") int orderId, @Valid StoreRequest.UpdateOrderDTO reqDTO, Errors errors) {
         SessionStore sessionStore = (SessionStore) session.getAttribute("sessionStore");
         if (storeId != sessionStore.getId()) {
             throw new Web403("권한이 없습니다.");
@@ -107,7 +107,7 @@ public class StoreOwnerController {
 
     @ResponseBody
     @GetMapping("/stores/{storeId}/orders/{orderId}") // 매장 관리자 - 주문내역 상세보기 (modal)
-    public ResponseEntity<?> orderDetail(@PathVariable int storeId, @PathVariable int orderId) {
+    public ResponseEntity<?> orderDetail(@PathVariable("storeId") int storeId, @PathVariable("orderId") int orderId) {
         SessionStore sessionStore = (SessionStore) session.getAttribute("sessionStore");
         if (storeId != sessionStore.getId()) {
             throw new Web403("권한이 없습니다.");
@@ -119,7 +119,7 @@ public class StoreOwnerController {
     /*------------------------------------------------------------------------------------- 지난 주문 ------------------*/
 
     @GetMapping("/stores/{storeId}/orders/history") // 매장 관리자 - 주문내역 목록보기
-    public String orderList(@PathVariable int storeId, Model model) {
+    public String orderList(@PathVariable("storeId") int storeId, Model model) {
         SessionStore sessionStore = (SessionStore) session.getAttribute("sessionStore");
         if (storeId != sessionStore.getId()) {
             throw new Web403("권한이 없습니다.");
@@ -131,7 +131,7 @@ public class StoreOwnerController {
     }
 
     @GetMapping("/stores/{storeId}/orders/history/date") // 매장 관리자 - 주문내역 날짜로 조회
-    public ResponseEntity<?> orderListSortByDate(@PathVariable int storeId,
+    public ResponseEntity<?> orderListSortByDate(@PathVariable("storeId") int storeId,
                                                  @RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
                                                  @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate, Model model) {
         SessionStore sessionStore = (SessionStore) session.getAttribute("sessionStore");
@@ -148,7 +148,7 @@ public class StoreOwnerController {
     /*------------------------------------------------------------------------------------- 메뉴 ----------------------*/
 
     @GetMapping("/stores/{storeId}/menus") // 매장 메뉴 목록보기
-    public String menuList(@PathVariable int storeId, Model model) {
+    public String menuList(@PathVariable("storeId") int storeId, Model model) {
         SessionStore sessionStore = (SessionStore) session.getAttribute("sessionStore");
         if (storeId != sessionStore.getId()) {
             throw new Web403("권한이 없습니다.");
@@ -160,7 +160,7 @@ public class StoreOwnerController {
 
     @ResponseBody
     @GetMapping("/stores/{storeId}/menus/{menuId}") // 매장 관리자 - 메뉴 상세보기
-    public ResponseEntity<?> menuDetail(@PathVariable int storeId, @PathVariable int menuId, Model model) {
+    public ResponseEntity<?> menuDetail(@PathVariable("storeId") int storeId, @PathVariable("menuId") int menuId, Model model) {
         SessionStore sessionStore = (SessionStore) session.getAttribute("sessionStore");
         if (storeId != sessionStore.getId()) {
             throw new Web403("권한이 없습니다.");
@@ -172,7 +172,7 @@ public class StoreOwnerController {
 
     @WebRequest
     @PostMapping("/stores/{storeId}/menus") // 매장 관리자 - 메뉴 등록하기
-    public String addMenu(@PathVariable int storeId, @Valid StoreRequest.CreateMenuDTO reqDTO, Errors errors) {
+    public String addMenu(@PathVariable("storeId") int storeId, @Valid StoreRequest.CreateMenuDTO reqDTO, Errors errors) {
         // TODO: 유효성 검사 (금액)
         SessionStore sessionStore = (SessionStore) session.getAttribute("sessionStore");
         if (storeId != sessionStore.getId()) {
@@ -185,7 +185,7 @@ public class StoreOwnerController {
     @WebRequest
     @ResponseBody
     @PutMapping("/stores/{storeId}/menus/{menuId}") // 매장 관리자 - 메뉴 수정하기
-    public ResponseEntity<?> updateMenu(@PathVariable int storeId, @PathVariable int menuId, @RequestBody @Valid StoreRequest.UpdateMenuDTO reqDTO, Errors errors) {
+    public ResponseEntity<?> updateMenu(@PathVariable("storeId") int storeId, @PathVariable("menuId") int menuId, @RequestBody @Valid StoreRequest.UpdateMenuDTO reqDTO, Errors errors) {
         SessionStore sessionStore = (SessionStore) session.getAttribute("sessionStore");
         if (storeId != sessionStore.getId()) {
             throw new Web403("권한이 없습니다.");
@@ -197,7 +197,7 @@ public class StoreOwnerController {
     /*------------------------------------------------------------------------------------- 매장 정보 ------------------*/
 
     @GetMapping("/stores/{storeId}") // 매장 관리자 - 매장 정보 보기
-    public String detail(@PathVariable int storeId, Model model) {
+    public String detail(@PathVariable("storeId") int storeId, Model model) {
         SessionStore sessionStore = (SessionStore) session.getAttribute("sessionStore");
         if (storeId != sessionStore.getId()) {
             throw new Web403("권한이 없습니다.");
@@ -208,7 +208,7 @@ public class StoreOwnerController {
     }
 
     @GetMapping("/stores/{storeId}/update-form") // 매장 관리자 - 매장 정보 업데이트 폼
-    public String updateForm(@PathVariable int storeId, Model model) {
+    public String updateForm(@PathVariable("storeId") int storeId, Model model) {
         SessionStore sessionStore = (SessionStore) session.getAttribute("sessionStore");
         if (storeId != sessionStore.getId()) {
             throw new Web403("권한이 없습니다.");
@@ -220,7 +220,7 @@ public class StoreOwnerController {
 
     @WebRequest
     @PostMapping("/stores/{storeId}") // 매장 관리자 - 매장 정보 수정
-    public String update(@PathVariable int storeId, @Valid StoreRequest.UpdateDTO reqDTO, Errors errors) {
+    public String update(@PathVariable("storeId") int storeId, @Valid StoreRequest.UpdateDTO reqDTO, Errors errors) {
         SessionStore sessionStore = (SessionStore) session.getAttribute("sessionStore");
         if (storeId != sessionStore.getId()) {
             throw new Web403("권한이 없습니다.");

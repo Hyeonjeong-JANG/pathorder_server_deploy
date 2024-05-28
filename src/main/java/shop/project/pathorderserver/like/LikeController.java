@@ -18,7 +18,7 @@ public class LikeController {
 
     // 좋아요 추가
     @PostMapping("/api/users/{userId}/likes")
-    public ResponseEntity<?> addLike(@PathVariable int userId, @RequestBody LikeRequest.AddLikeDTO reqDTO) {
+    public ResponseEntity<?> addLike(@PathVariable("userId") int userId, @RequestBody LikeRequest.AddLikeDTO reqDTO) {
         SessionUser sessionUser = (SessionUser) session.getAttribute("sessionUser");
         reqDTO.setUserId(sessionUser.getId());
         LikeResponse.AddLikeDTO respDTO = likeService.addLike(reqDTO);
@@ -28,7 +28,7 @@ public class LikeController {
 
     // 좋아요 삭제
     @DeleteMapping("/api/users/{userId}/likes")
-    public ResponseEntity<?> removeLike(@PathVariable int userId, @RequestBody LikeRequest.RemoveLikeDTO reqDTO) {
+    public ResponseEntity<?> removeLike(@PathVariable("userId") int userId, @RequestBody LikeRequest.RemoveLikeDTO reqDTO) {
         SessionUser sessionUser = (SessionUser) session.getAttribute("sessionUser");
         reqDTO.setUserId(sessionUser.getId());
 
@@ -39,7 +39,7 @@ public class LikeController {
 
     // 특정 사용자의 좋아요 목록 조회
     @GetMapping("/api/users/{userId}/likes")
-    public ResponseEntity<?> getUserLikes(@PathVariable int userId) {
+    public ResponseEntity<?> getUserLikes(@PathVariable("userId") int userId) {
         SessionUser sessionUser = (SessionUser) session.getAttribute("sessionUser");
         if (userId != sessionUser.getId()) {
             throw new App403("해당 좋아요 리스트를 열람하실 수 없습니다.");

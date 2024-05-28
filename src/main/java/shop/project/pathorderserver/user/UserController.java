@@ -43,7 +43,7 @@ public class UserController {
     }
 
     @GetMapping("/api/users/{userId}") // 회원정보 조회
-    public ResponseEntity<?> profile(@PathVariable int userId) {
+    public ResponseEntity<?> profile(@PathVariable("userId") int userId) {
         UserResponse.UserDTO respDTO = userService.getUser(userId);
 
         return ResponseEntity.ok(new ApiUtil<>(respDTO));
@@ -51,7 +51,7 @@ public class UserController {
 
     @AppRequest
     @PutMapping("/api/users/{userId}") // 회원정보 수정
-    public ResponseEntity<?> update(@PathVariable String userId, @RequestBody @Valid UserRequest.UpdateDTO reqDTO, Errors errors) {
+    public ResponseEntity<?> update(@PathVariable("userId") String userId, @RequestBody @Valid UserRequest.UpdateDTO reqDTO, Errors errors) {
         SessionUser sessionUser = (SessionUser) session.getAttribute("sessionUser");
         SessionUser newSessionUser = userService.setUser(reqDTO, sessionUser.getId());
         session.setAttribute("sessionUser", newSessionUser);
@@ -60,7 +60,7 @@ public class UserController {
     }
 
     @PostMapping("/api/users/{userId}") // 사진 등록
-    public ResponseEntity<?> uploadImg(@PathVariable int userId, @RequestBody UserRequest.ImgDTO reqDTO) throws IOException {
+    public ResponseEntity<?> uploadImg(@PathVariable("userId") int userId, @RequestBody UserRequest.ImgDTO reqDTO) throws IOException {
         UserResponse.ImgDTO respDTO = userService.setImg(reqDTO, userId); // TODO: userId -> sessionUserId
 
         return ResponseEntity.ok(new ApiUtil<>(respDTO));
@@ -68,7 +68,7 @@ public class UserController {
 
     @AppRequest
     @PostMapping("/api/users/{userId}/orders") // 주문하기
-    public ResponseEntity<?> order(@PathVariable String userId, @RequestBody @Valid UserRequest.OrderDTO reqDTO, Errors errors) {
+    public ResponseEntity<?> order(@PathVariable("userId") String userId, @RequestBody @Valid UserRequest.OrderDTO reqDTO, Errors errors) {
         UserResponse.OrderDTO respDTO = userService.createOrder(reqDTO);
         storeSseService.createOrderNotification(respDTO.getId(), respDTO.getStoreId());
 
@@ -76,14 +76,14 @@ public class UserController {
     }
 
     @GetMapping("/api/users/{userId}/orders") // 회원 주문내역 목록보기
-    public ResponseEntity<?> orderList(@PathVariable int userId) {
+    public ResponseEntity<?> orderList(@PathVariable("userId") int userId) {
         UserResponse.OrderListDTO respDTO = userService.getOrderList(userId);
 
         return ResponseEntity.ok(new ApiUtil<>(respDTO));
     }
 
     @GetMapping("/api/users/{userId}/orders/{orderId}") // 회원 주문내역 상세보기
-    public ResponseEntity<?> orderDetail(@PathVariable String userId, @PathVariable int orderId) {
+    public ResponseEntity<?> orderDetail(@PathVariable("userId") String userId, @PathVariable("orderId") int orderId) {
         UserResponse.OrderDetailDTO respDTO = userService.getOrderDetail(orderId);
 
         return ResponseEntity.ok(new ApiUtil<>(respDTO));
